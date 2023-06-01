@@ -1,0 +1,33 @@
+server.port: 8081
+
+spring:
+  application:
+    name: best-practice
+  datasource:
+    url: jdbc:postgresql://localhost:5432/best_practice
+    username: rashad
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USERNAME}
+    password: ${GMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+
+springdoc:
+  swagger-ui:
+    tagsSorter: alpha
